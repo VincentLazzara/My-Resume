@@ -30,6 +30,8 @@ class MainTabController: UITabBarController {
         let nav1 = templateNavigationController(image: UIImage(named: "user.png")!, rootViewController: AboutViewController())
         nav1.title = "About"
         
+        addChild(nav1)
+        
         let nav2 = templateNavigationController(image: UIImage(named: "envelope.png")!, rootViewController: ContactViewController())
         nav2.title = "Contact"
 
@@ -43,7 +45,7 @@ class MainTabController: UITabBarController {
            let attributes = [NSAttributedString.Key.font: font]
            UITabBarItem.appearance().setTitleTextAttributes(attributes, for: .normal)
 
-        viewControllers = [nav1, nav2, nav3, nav4]
+        viewControllers = [nav1, nav3, nav4, nav2]
         
     }
 

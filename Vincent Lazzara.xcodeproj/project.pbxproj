@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4AA710429B1ED0F00499317 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AA710329B1ED0E00499317 /* ScrollView.swift */; };
+		A4AA710629B1F4EC00499317 /* SkillsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AA710529B1F4EC00499317 /* SkillsScrollView.swift */; };
 		A4CB60BC29B18BD400AD3FD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CB60BB29B18BD400AD3FD9 /* AppDelegate.swift */; };
 		A4CB60BE29B18BD400AD3FD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CB60BD29B18BD400AD3FD9 /* SceneDelegate.swift */; };
 		A4CB60C529B18BDC00AD3FD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4CB60C429B18BDC00AD3FD9 /* Assets.xcassets */; };
@@ -16,9 +18,16 @@
 		A4CB60D629B1AF6A00AD3FD9 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CB60D529B1AF6A00AD3FD9 /* ContactViewController.swift */; };
 		A4CB60D829B1AF8F00AD3FD9 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CB60D729B1AF8F00AD3FD9 /* ProjectsViewController.swift */; };
 		A4CB60DA29B1AFB300AD3FD9 /* ExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CB60D929B1AFB300AD3FD9 /* ExamplesViewController.swift */; };
+		A4CB60DD29B1B71700AD3FD9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CB60DC29B1B71700AD3FD9 /* HeaderView.swift */; };
+		A4CB60DF29B1B90300AD3FD9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CB60DE29B1B90200AD3FD9 /* Extensions.swift */; };
+		B6B39E8D3B03FEF085089EB5 /* Pods_Vincent_Lazzara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ACFAB7CA4191F1231EDFD51 /* Pods_Vincent_Lazzara.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6ACFAB7CA4191F1231EDFD51 /* Pods_Vincent_Lazzara.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vincent_Lazzara.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A093F2F2ACB6C0EADF6DDA75 /* Pods-Vincent Lazzara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vincent Lazzara.release.xcconfig"; path = "Target Support Files/Pods-Vincent Lazzara/Pods-Vincent Lazzara.release.xcconfig"; sourceTree = "<group>"; };
+		A4AA710329B1ED0E00499317 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		A4AA710529B1F4EC00499317 /* SkillsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsScrollView.swift; sourceTree = "<group>"; };
 		A4CB60B829B18BD400AD3FD9 /* Vincent Lazzara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vincent Lazzara.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4CB60BB29B18BD400AD3FD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4CB60BD29B18BD400AD3FD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +39,9 @@
 		A4CB60D529B1AF6A00AD3FD9 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		A4CB60D729B1AF8F00AD3FD9 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		A4CB60D929B1AFB300AD3FD9 /* ExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesViewController.swift; sourceTree = "<group>"; };
+		A4CB60DC29B1B71700AD3FD9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		A4CB60DE29B1B90200AD3FD9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EA4F2168784972BE7BCF94DB /* Pods-Vincent Lazzara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vincent Lazzara.debug.xcconfig"; path = "Target Support Files/Pods-Vincent Lazzara/Pods-Vincent Lazzara.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6B39E8D3B03FEF085089EB5 /* Pods_Vincent_Lazzara.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		388448296BBDDAEEC43659DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6ACFAB7CA4191F1231EDFD51 /* Pods_Vincent_Lazzara.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		642CE3FE9A7D11598C84A029 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA4F2168784972BE7BCF94DB /* Pods-Vincent Lazzara.debug.xcconfig */,
+				A093F2F2ACB6C0EADF6DDA75 /* Pods-Vincent Lazzara.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A4CB60AF29B18BD300AD3FD9 = {
 			isa = PBXGroup;
 			children = (
 				A4CB60BA29B18BD400AD3FD9 /* Vincent Lazzara */,
 				A4CB60B929B18BD400AD3FD9 /* Products */,
+				642CE3FE9A7D11598C84A029 /* Pods */,
+				388448296BBDDAEEC43659DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +94,7 @@
 		A4CB60BA29B18BD400AD3FD9 /* Vincent Lazzara */ = {
 			isa = PBXGroup;
 			children = (
+				A4CB60DB29B1B6F500AD3FD9 /* Views */,
 				A4CB60D029B18D0C00AD3FD9 /* SupportFiles */,
 				A4CB60CF29B18CFB00AD3FD9 /* ViewControllers */,
 				A4CB60BB29B18BD400AD3FD9 /* AppDelegate.swift */,
@@ -88,8 +121,19 @@
 			children = (
 				A4CB60C429B18BDC00AD3FD9 /* Assets.xcassets */,
 				A4CB60C629B18BDC00AD3FD9 /* LaunchScreen.storyboard */,
+				A4CB60DE29B1B90200AD3FD9 /* Extensions.swift */,
 			);
 			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		A4CB60DB29B1B6F500AD3FD9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4CB60DC29B1B71700AD3FD9 /* HeaderView.swift */,
+				A4AA710329B1ED0E00499317 /* ScrollView.swift */,
+				A4AA710529B1F4EC00499317 /* SkillsScrollView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4CB60CC29B18BDC00AD3FD9 /* Build configuration list for PBXNativeTarget "Vincent Lazzara" */;
 			buildPhases = (
+				CBCEFC976356E186CD298174 /* [CP] Check Pods Manifest.lock */,
 				A4CB60B429B18BD400AD3FD9 /* Sources */,
 				A4CB60B529B18BD400AD3FD9 /* Frameworks */,
 				A4CB60B629B18BD400AD3FD9 /* Resources */,
+				0103EC42B8C6036EFBD9C27F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,7 +174,7 @@
 				};
 			};
 			buildConfigurationList = A4CB60B329B18BD400AD3FD9 /* Build configuration list for PBXProject "Vincent Lazzara" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -157,18 +203,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0103EC42B8C6036EFBD9C27F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Vincent Lazzara/Pods-Vincent Lazzara-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Vincent Lazzara/Pods-Vincent Lazzara-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Vincent Lazzara/Pods-Vincent Lazzara-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBCEFC976356E186CD298174 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Vincent Lazzara-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A4CB60B429B18BD400AD3FD9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A4CB60D829B1AF8F00AD3FD9 /* ProjectsViewController.swift in Sources */,
+				A4CB60DF29B1B90300AD3FD9 /* Extensions.swift in Sources */,
 				A4CB60DA29B1AFB300AD3FD9 /* ExamplesViewController.swift in Sources */,
+				A4AA710429B1ED0F00499317 /* ScrollView.swift in Sources */,
 				A4CB60BC29B18BD400AD3FD9 /* AppDelegate.swift in Sources */,
+				A4AA710629B1F4EC00499317 /* SkillsScrollView.swift in Sources */,
 				A4CB60D229B18D4700AD3FD9 /* MainTabController.swift in Sources */,
 				A4CB60D429B1AC7800AD3FD9 /* AboutViewController.swift in Sources */,
 				A4CB60BE29B18BD400AD3FD9 /* SceneDelegate.swift in Sources */,
 				A4CB60D629B1AF6A00AD3FD9 /* ContactViewController.swift in Sources */,
+				A4CB60DD29B1B71700AD3FD9 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +394,7 @@
 		};
 		A4CB60CD29B18BDC00AD3FD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA4F2168784972BE7BCF94DB /* Pods-Vincent Lazzara.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -314,6 +407,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -329,6 +423,7 @@
 		};
 		A4CB60CE29B18BDC00AD3FD9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A093F2F2ACB6C0EADF6DDA75 /* Pods-Vincent Lazzara.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -341,6 +436,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
