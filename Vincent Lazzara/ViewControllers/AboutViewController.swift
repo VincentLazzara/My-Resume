@@ -12,6 +12,8 @@ class AboutViewController: UIViewController{
     
     //MARK: Properties
     
+    private var backgroundSheetLauncher: LinkSheetLauncher!
+    
     private let scrollView = UIScrollView()
     
     private let viewModel = AboutViewModel()
@@ -48,6 +50,7 @@ class AboutViewController: UIViewController{
     func configure(){
         let customNavBar = CustomNavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 70))
         navigationController?.navigationBar.addSubview(customNavBar)
+        customNavBar.delegate = self
         
         view.addSubview(scrollView)
         scrollView.addConstraintsToFillView(view)
@@ -109,4 +112,23 @@ class AboutViewController: UIViewController{
     }
 
     
+}
+
+
+extension AboutViewController: customNavBarDelegate{
+    func linkPressed() {
+        self.backgroundSheetLauncher = LinkSheetLauncher()
+        self.backgroundSheetLauncher.delegate = self
+        self.backgroundSheetLauncher.show()
+    }
+    
+    
+    
+}
+
+//MARK: Background Sheet Delegate
+extension AboutViewController: LinkSheetLauncherDelegate{
+    func didSelect(option: LinkActionOptions) {
+        UIApplication.shared.open(option.url)
+    }
 }

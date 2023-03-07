@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol customNavBarDelegate: class{
+    func linkPressed()
+}
+
 class CustomNavigationBar: UIView {
+    
+     var delegate: customNavBarDelegate?
     
     public var titleLabel: UILabel = {
         let label = UILabel()
@@ -93,8 +99,7 @@ class CustomNavigationBar: UIView {
     }
     
     @objc func linkPressed(){
-        
-        print("Link pressed")
+        delegate?.linkPressed()
         
     }
     
