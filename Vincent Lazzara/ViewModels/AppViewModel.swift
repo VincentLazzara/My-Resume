@@ -148,9 +148,9 @@ enum projectEnumerations: Int{
     var videoURL: String{
         switch self{
         case .blackScholes:
-            return "Y0HjaR0tj7Q"
+            return "-0sbUVqFX_M"
         case .theSLAP:
-            return "Y0HjaR0tj7Q"
+            return "pgp53ncvGFQ"
         case .todoie:
             return "Y0HjaR0tj7Q"
         case .seeFood:
@@ -165,6 +165,16 @@ enum projectEnumerations: Int{
         case .theSLAP: return "-Firebase Auth\n\n-Firebase Data\n\n-Front-End/Back-End\n\n-User Customization"
         case .todoie: return "-Core Data \n\n-Realm\n\n-TableViews\n\n-Data Filtering"
         case .seeFood: return "-Core ML\n\n-Model Creation\n\n-CreateML"
+        }
+    }
+    
+    
+    var buttonLink: String{
+        switch self{
+        case .blackScholes: return "https://github.com/VincentLazzara/BlackScholesCalculator"
+        case .theSLAP: return "nil"
+        case.todoie: return "https://github.com/VincentLazzara/Todoie"
+        case .seeFood: return "https://github.com/VincentLazzara/SeeFood"
         }
     }
 }

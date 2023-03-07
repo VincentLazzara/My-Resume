@@ -112,28 +112,24 @@ class ProjectsViewController: UIViewController{
     @objc func blackScholesTapped() {
         let nav = AppViewController()
         nav.app = .blackScholes
-        nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true)
         
     }
     @objc func theSlapTapped() {
         let nav = AppViewController()
         nav.app = .theSLAP
-        nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true)
         
     }
     @objc func todoieTapped() {
         let nav = AppViewController()
         nav.app = .todoie
-        nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true)
         
     }
     @objc func seefoodTapped() {
         let nav = AppViewController()
         nav.app = .seeFood
-        nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true)
         
     }
@@ -146,7 +142,15 @@ class ProjectsViewController: UIViewController{
 
 extension ProjectsViewController: AppScrollViewDelegate{
     func userDidSelect(app: String) {
-        print(app)
+        switch app{
+        case "Black-\nScholes": blackScholesTapped()
+        case "The\nSLAP": theSlapTapped()
+        case "Todoie": todoieTapped()
+        case "See\nFood": seefoodTapped()
+        case "{V.L}": return
+        default: theSlapTapped()
+            
+        }
     }
     
     

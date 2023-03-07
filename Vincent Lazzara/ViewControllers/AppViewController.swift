@@ -40,9 +40,12 @@ class AppViewController: UIViewController{
          label.font = UIFont(name: "CourierNewPS-BoldMT", size: 16)
          label.textColor = UIColor(red: 0.8863, green: 0.8863, blue: 0.8863, alpha: 1.0)
          label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.sizeToFit()
          label.textAlignment = .left
          return label
      }()
+    
     
     var app: projectEnumerations? {
         didSet{
@@ -52,6 +55,10 @@ class AppViewController: UIViewController{
             self.featuresText.text = app?.appFeatures
             self.imageScreenshots.setImageInputs(app!.appImages)
             self.appImage.image = app?.appIcon
+            
+            if app?.buttonLink == "nil"{
+                
+            }
         }
     }
     
@@ -116,6 +123,19 @@ class AppViewController: UIViewController{
         label.isUserInteractionEnabled = true
         return label
     }()
+    
+    var githubButton: UIButton {
+        let button = UIButton(type: .system)
+        button.setDimensions(width: 160, height: 30)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor.white
+        button.layer.cornerRadius = 10
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.titleLabel?.font = UIFont(name: "CourierNewPS-BoldMT", size: 16)
+        button.setTitle("View In GitHub", for: .normal)
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        return button
+    }
         
     
     //MARK: Lifecycle
@@ -160,10 +180,18 @@ class AppViewController: UIViewController{
             contentView.addSubview(appImage)
             appImage.anchor(top: contentView.topAnchor, left: contentView.leftAnchor, paddingTop: 20, paddingLeft: 20)
             
-            let stack = UIStackView(arrangedSubviews: [appsLabel, appTitleText])
+            var stack = UIStackView()
+            
+            if app?.buttonLink == "nil"{
+                stack = UIStackView(arrangedSubviews: [appsLabel, appTitleText])
+            } else {
+                stack = UIStackView(arrangedSubviews: [appsLabel, appTitleText, githubButton])
+            }
             stack.axis = .vertical
-            stack.distribution = .fillEqually
-            stack.spacing = 0
+            stack.distribution = .fill
+            stack.spacing = 8
+            stack.alignment = .leading
+            
             contentView.addSubview(stack)
             stack.centerY(inView: appImage, leftAnchor: appImage.rightAnchor, paddingLeft: 20)
             stack.anchor(right: contentView.rightAnchor, paddingRight: 5)
@@ -208,6 +236,12 @@ class AppViewController: UIViewController{
         view.reloadInputViews()
         scrollView.reloadInputViews()
         
+    }
+    
+    @objc func buttonTapped(){
+        if let url = URL(string: app!.buttonLink){
+            UIApplication.shared.open(url)
+        }
     }
     
 }
