@@ -9,7 +9,7 @@ import UIKit
 
 class CustomNavigationBar: UIView {
     
-    private  let titleLabel: UILabel = {
+    public var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Vincent Lazzara"
         label.font = UIFont(name: "CourierNewPS-BoldMT", size: 18)
@@ -27,7 +27,7 @@ class CustomNavigationBar: UIView {
         return label
     }()
     
-    private let circleImageView: UIImageView = {
+    private let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "myPhoto.png")
         imageView.contentMode = .scaleAspectFill
@@ -59,18 +59,6 @@ class CustomNavigationBar: UIView {
     }()
 
     
-    private let image: UIImageView = {
-        let image =  UIImageView(image: UIImage(named: "link")?.withTintColor(.white, renderingMode: .alwaysTemplate))
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(linkPressed))
-        image.addGestureRecognizer(tapGesture)
-        
-    
-        return image
-        
-    }()
-    
   
     
     override init(frame: CGRect) {
@@ -83,8 +71,8 @@ class CustomNavigationBar: UIView {
         addSubview(background)
         background.anchor(top: topAnchor, left: leftAnchor,  bottom: bottomAnchor, right: rightAnchor, paddingBottom: 5)
         
-        addSubview(circleImageView)
-        circleImageView.anchor(top: topAnchor, right: rightAnchor, paddingTop: 5, paddingRight: 15)
+        addSubview(profileImageView)
+        profileImageView.anchor(top: topAnchor, right: rightAnchor, paddingTop: 5, paddingRight: 15)
         
         addSubview(titleLabel)
         titleLabel.centerX(inView: self, topAnchor: topAnchor, paddingTop: 5)
@@ -97,7 +85,7 @@ class CustomNavigationBar: UIView {
     //   image.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
        // button.centerX(inView: self, topAnchor: topAnchor, paddingTop: 40)
        // bringSubviewToFront(button)
-        button.centerY(inView: circleImageView, leftAnchor: leftAnchor, paddingLeft: 27.5)
+        button.centerY(inView: profileImageView, leftAnchor: leftAnchor, paddingLeft: 27.5)
     }
     
     required init?(coder: NSCoder) {
@@ -108,6 +96,14 @@ class CustomNavigationBar: UIView {
         
         print("Link pressed")
         
+    }
+    
+    
+    func configureForTitle(title: String, subtitle: String){
+        self.titleLabel.text = title
+        self.subtitleLabel.text = subtitle
+        self.profileImageView.isHidden = true
+        self.button.isHidden = true
     }
     
 }

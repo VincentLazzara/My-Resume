@@ -14,102 +14,25 @@ class AboutViewController: UIViewController{
     
     private let scrollView = UIScrollView()
     
-    private  let careerObjective: CLTypingLabel = {
-        let label = CLTypingLabel()
-        label.text = "Career Objective:"
-        label.font = UIFont(name: "CourierNewPS-BoldMT", size: 16)
-        label.textAlignment = .left
-        label.textColor = .cyan
-        return label
-    }()
+    private let viewModel = AboutViewModel()
     
-    private let careerText: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "CourierNewPSMT", size: 16)
-        label.textColor = .white
-        label.numberOfLines = 0
-        label.text = "With a passion for creating intuitive and user-friendly applications, I have developed a strong foundation in iOS development through various personal projects. I am eager to leverage my skills to contribute to a team of like-minded individuals and continue my growth as a developer in a professional setting."
-        label.textAlignment = .left
-        return label
-    }()
+    private lazy var careerObjective = viewModel.careerObjective
+    private lazy var careerText = viewModel.careerText
 
-    private  let certificationLabel: CLTypingLabel = {
-        let label = CLTypingLabel()
-        label.text = "Certifications:"
-        label.font = UIFont(name: "CourierNewPS-BoldMT", size: 16)
-        label.textAlignment = .left
-        label.textColor = .cyan
-        return label
-    }()
+    private lazy var certificationLabel = viewModel.certificationLabel
+    private lazy var certificationText =  viewModel.certificationText
     
-    private let certificationText: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "CourierNewPSMT", size: 16)
-        label.textColor = .white
-        label.numberOfLines = 0
-        label.text = "• iOS Developer Professional Certificate (Meta) \n \n• Certified Swift User (Apple)\n\n• iOS App Development Bootcamp (London App Brewery) \n\n• Data Structures & Algorithms Bootcamp (Swift Arcade)"
-        label.textAlignment = .left
-        return label
-    }()
+    private lazy var technicalSkillsLabel = viewModel.technicalSkillsLabel
+    private lazy var techView = viewModel.techView
     
-    private  let technicalSkillsLabel: CLTypingLabel = {
-        let label = CLTypingLabel()
-        label.text = "Technical Skills (scrollable):"
-        label.font = UIFont(name: "CourierNewPS-BoldMT", size: 16)
-        label.textAlignment = .left
-        label.textColor = .cyan
-        return label
-    }()
-    private let techView = TechScrollView()
+    private  lazy var personalSkillsLabel = viewModel.personalSkillsLabel
+    private lazy var skillView = viewModel.skillView
     
-    private  let personalSkillsLabel: CLTypingLabel = {
-        let label = CLTypingLabel()
-        label.text = "Personal Skills (scrollable):"
-        label.font = UIFont(name: "CourierNewPS-BoldMT", size: 16)
-        label.textAlignment = .left
-        label.textColor = .cyan
-        return label
-    }()
+    private lazy var educationLabel = viewModel.educationLabel
+    private lazy var educationText = viewModel.educationText
     
-    private let skillView = SkillsView()
-    
-    private  let educationLabel: CLTypingLabel = {
-        let label = CLTypingLabel()
-        label.text = "Education:"
-        label.font = UIFont(name: "CourierNewPS-BoldMT", size: 16)
-        label.textAlignment = .left
-        label.textColor = .cyan
-        return label
-    }()
-    
-    private let educationText: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "CourierNewPSMT", size: 16)
-        label.textColor = .white
-        label.numberOfLines = 0
-        label.text = "B.A. Business Administration - Finance Concenctration \nCalifornia State University, Fullerton \n (April 2023)"
-        label.textAlignment = .left
-        return label
-    }()
-    
-    private  let aboutLabel: CLTypingLabel = {
-        let label = CLTypingLabel()
-        label.text = "About Me:"
-        label.font = UIFont(name: "CourierNewPS-BoldMT", size: 16)
-        label.textAlignment = .left
-        label.textColor = .cyan
-        return label
-    }()
-    
-    private let aboutMeText: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "CourierNewPSMT", size: 16)
-        label.textColor = .white
-        label.numberOfLines = 0
-        label.text = "• I love 70s rock! \n \n• I collect cassettes & records \n \n• I enjoy fixing old cars \n \n• I'm always learning something new! \n \n• I volunteer as a tutor for JOYA scholars \n \n• I was a boxer in my teens"
-        label.textAlignment = .left
-        return label
-    }()
+    private lazy var aboutLabel = viewModel.aboutLabel
+    private lazy var aboutMeText = viewModel.aboutMeText
     
     
     //MARK: Lifecycle
@@ -144,19 +67,15 @@ class AboutViewController: UIViewController{
         contentView.addSubview(careerText)
         careerText.centerX(inView: contentView, topAnchor: careerObjective.bottomAnchor, paddingTop: 5)
         careerText.anchor(left: contentView.leftAnchor, right: contentView.rightAnchor, paddingLeft: 15, paddingRight: 10)
-        
-        
-        
+    
         contentView.addSubview(certificationLabel)
         certificationLabel.anchor(top: careerText.bottomAnchor, left: contentView.leftAnchor, paddingTop: 25, paddingLeft: 10)
         
         contentView.addSubview(certificationText)
         certificationText.anchor(top: certificationLabel.bottomAnchor, left: contentView.leftAnchor, right: contentView.rightAnchor, paddingTop: 5, paddingLeft: 15, paddingRight: 5)
         
-        
         contentView.addSubview(technicalSkillsLabel)
         technicalSkillsLabel.anchor(top: certificationText.bottomAnchor, left: contentView.leftAnchor, right: contentView.rightAnchor, paddingTop: 25, paddingLeft: 10, paddingRight: 5)
-        
         
         techView.setDimensions(width: view.frame.width, height: 100)
         contentView.addSubview(techView)
@@ -165,11 +84,9 @@ class AboutViewController: UIViewController{
         contentView.addSubview(personalSkillsLabel)
         personalSkillsLabel.anchor(top: techView.bottomAnchor, left: contentView.leftAnchor, right: contentView.rightAnchor, paddingTop: 25, paddingLeft: 10, paddingRight: 5)
         
-        
         skillView.setDimensions(width: view.frame.width, height: 100)
         contentView.addSubview(skillView)
         skillView.centerX(inView: view, topAnchor: personalSkillsLabel.bottomAnchor)
-        
         
         contentView.addSubview(educationLabel)
             
@@ -190,5 +107,6 @@ class AboutViewController: UIViewController{
         contentView.bottomAnchor.constraint(equalTo: aboutMeText.bottomAnchor, constant: 50).isActive = true
         
     }
+
     
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExamplesViewController: UIViewController{
+class ExamplesViewController: UITableViewController{
     
     //MARK: Properties
     
