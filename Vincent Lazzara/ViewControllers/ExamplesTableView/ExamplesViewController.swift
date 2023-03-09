@@ -19,10 +19,10 @@ class ExamplesViewController: UITableViewController{
     
     let uiTitle = ["Onboarding Screen", "Loading Animations", "Star Rating Form", "Side Menu", "User Post", "Settings", "Search User", "Slide Up Menu", "Contacts", "Log In", "Color Picker"]
     
-    let viewControllers: [UIViewController] = [UIStoryboard(name: "OnboardingStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "onboardingStoryboard"),LoadingViewController()
-                                            
-    
-    
+    let viewControllers: [UIViewController] = [
+        UIStoryboard(name: "OnboardingStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "onboardingStoryboard"),
+        LoadingViewController(),
+        StarRatingViewController()
     
     ]
     
@@ -70,10 +70,12 @@ extension  ExamplesViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
         
-        if indexPath.row == 0{
-            self.present(viewControllers[indexPath.row], animated: true, completion: nil)
-        } else if indexPath.row == 1{
-            self.present(viewControllers[indexPath.row], animated: true, completion: nil)
+        
+        
+        switch indexPath.row{
+        case 0...2: self.present(viewControllers[indexPath.row], animated: true, completion: nil)
+        default: return
         }
+   
     }
 }
