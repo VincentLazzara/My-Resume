@@ -17,7 +17,14 @@ class ExamplesViewController: UITableViewController{
     
     private lazy var headerView = CustomNavigationBar()
     
-    let uiTitle = ["Onboarding Screen", "Loading Screen", "User Post", "Side Menu", "Settings", "Search User", "Element Swiper", "Slide Up Menu", "Contacts", "Log In", "Color Picker"]
+    let uiTitle = ["Onboarding Screen", "Loading Animations", "Star Rating Form", "Side Menu", "User Post", "Settings", "Search User", "Slide Up Menu", "Contacts", "Log In", "Color Picker"]
+    
+    let viewControllers: [UIViewController] = [UIStoryboard(name: "OnboardingStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "onboardingStoryboard"),LoadingViewController()
+                                            
+    
+    
+    
+    ]
     
     
     //MARK: Lifecycle
@@ -63,9 +70,10 @@ extension  ExamplesViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
         
-        let storyboard = UIStoryboard(name: "OnboardingStoryBoard", bundle: nil)
-        let onboardingVC = storyboard.instantiateViewController(withIdentifier: "onboardingStoryboard")
-        onboardingVC.modalPresentationStyle = .fullScreen
-        self.present(onboardingVC, animated: true, completion: nil)
+        if indexPath.row == 0{
+            self.present(viewControllers[indexPath.row], animated: true, completion: nil)
+        } else if indexPath.row == 1{
+            self.present(viewControllers[indexPath.row], animated: true, completion: nil)
+        }
     }
 }

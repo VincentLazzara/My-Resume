@@ -36,11 +36,12 @@ class OnboardingViewController: UIViewController{
     
     override func viewDidLoad() {
          view.backgroundColor = .white
+        
         slides = [
-            OnboardingSlide(title: "Finally...", description: "...An IOS Developer you can trust", image: UIImage(named: "si1")!),
-            OnboardingSlide(title: "All Custom.", description: "This was made entirely with a Storyboard & UIKit", image: UIImage(named: "si2")!),
-            OnboardingSlide(title: "Add Screens With Ease.", description: "Created with the best coding practices for scability", image: UIImage(named: "si3")!),
-            OnboardingSlide(title: "Let's Connect.", description: "Reach out to set up an interview today!", image: UIImage(named: "si4")!),
+            OnboardingSlide(title: "Vincent Lazzara", description: "An IOS Developer you can trust", image: UIImage(named: "si1")!),
+            OnboardingSlide(title: "All Custom", description: "This was made entirely with a Storyboard & UIKit", image: UIImage(named: "si2")!),
+            OnboardingSlide(title: "Add Screens With Ease", description: "Created with the best coding practices for scability", image: UIImage(named: "si3")!),
+            OnboardingSlide(title: "Let's Connect", description: "Reach out to set up an interview today!", image: UIImage(named: "si4")!),
         ]
         
         pageControl.numberOfPages = slides.count
@@ -53,6 +54,13 @@ class OnboardingViewController: UIViewController{
         nextButton.layer.cornerRadius = 12
         nextButton.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 14)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let indexPath = IndexPath(item: 0, section: 0)
+        pageControl.page = 0
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        currentPage = 0
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
