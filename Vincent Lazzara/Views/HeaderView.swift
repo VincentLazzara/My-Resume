@@ -18,7 +18,7 @@ class CustomNavigationBar: UIView {
     public var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Vincent Lazzara"
-        label.font = UIFont(name: "CourierNewPS-BoldMT", size: 18)
+        label.font = UIFont(name: "CourierNewPS-BoldMT", size: 20)
         label.textAlignment = .center
         label.textColor = .cyan
         return label
@@ -27,8 +27,9 @@ class CustomNavigationBar: UIView {
     private let subtitleLabel: UILabel = {
         let label = UILabel()
         label.text = "iOS Developer"
-        label.font = UIFont(name: "CourierNewPS-BoldMT", size: 16)
+        label.font = UIFont(name: "CourierNewPS-BoldMT", size: 18)
         label.textColor = .white
+        label.numberOfLines = 0
         label.textAlignment = .center
         return label
     }()
@@ -85,6 +86,7 @@ class CustomNavigationBar: UIView {
         
         addSubview(subtitleLabel)
         subtitleLabel.centerX(inView: self, topAnchor: titleLabel.bottomAnchor, paddingTop: 5)
+        subtitleLabel.anchor(left: leftAnchor, right: rightAnchor, paddingLeft: 5, paddingRight: 5)
         
         addSubview(button)
         button.setDimensions(width: 24, height: 24)

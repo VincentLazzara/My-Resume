@@ -18,6 +18,11 @@
 		A4C7F28329B7487000C97C84 /* LinkSheetLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7F28229B7487000C97C84 /* LinkSheetLauncher.swift */; };
 		A4C7F28529B7488100C97C84 /* LinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7F28429B7488100C97C84 /* LinkViewModel.swift */; };
 		A4C7F28729B7488E00C97C84 /* LinkSheetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7F28629B7488E00C97C84 /* LinkSheetCell.swift */; };
+		A4C7F28929B7652200C97C84 /* ExamplesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7F28829B7652200C97C84 /* ExamplesTableViewCell.swift */; };
+		A4C7F29029B82AA200C97C84 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7F28F29B82AA200C97C84 /* OnboardingViewController.swift */; };
+		A4C7F29229B8337400C97C84 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7F29129B8337400C97C84 /* OnboardingSlide.swift */; };
+		A4C7F29429B88C8D00C97C84 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C7F29329B88C8D00C97C84 /* OnboardingCollectionViewCell.swift */; };
+		A4C7F29829B9B32F00C97C84 /* OnboardingStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C7F29729B9B32F00C97C84 /* OnboardingStoryBoard.storyboard */; };
 		A4CB60BC29B18BD400AD3FD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CB60BB29B18BD400AD3FD9 /* AppDelegate.swift */; };
 		A4CB60BE29B18BD400AD3FD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CB60BD29B18BD400AD3FD9 /* SceneDelegate.swift */; };
 		A4CB60C529B18BDC00AD3FD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4CB60C429B18BDC00AD3FD9 /* Assets.xcassets */; };
@@ -46,6 +51,11 @@
 		A4C7F28229B7487000C97C84 /* LinkSheetLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkSheetLauncher.swift; sourceTree = "<group>"; };
 		A4C7F28429B7488100C97C84 /* LinkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkViewModel.swift; sourceTree = "<group>"; };
 		A4C7F28629B7488E00C97C84 /* LinkSheetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkSheetCell.swift; sourceTree = "<group>"; };
+		A4C7F28829B7652200C97C84 /* ExamplesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesTableViewCell.swift; sourceTree = "<group>"; };
+		A4C7F28F29B82AA200C97C84 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		A4C7F29129B8337400C97C84 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		A4C7F29329B88C8D00C97C84 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		A4C7F29729B9B32F00C97C84 /* OnboardingStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingStoryBoard.storyboard; sourceTree = "<group>"; };
 		A4CB60B829B18BD400AD3FD9 /* Vincent Lazzara.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vincent Lazzara.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4CB60BB29B18BD400AD3FD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4CB60BD29B18BD400AD3FD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +121,34 @@
 			path = Links;
 			sourceTree = "<group>";
 		};
+		A4C7F28A29B7652600C97C84 /* ExamplesTableView */ = {
+			isa = PBXGroup;
+			children = (
+				A4C7F28829B7652200C97C84 /* ExamplesTableViewCell.swift */,
+				A4CB60D929B1AFB300AD3FD9 /* ExamplesViewController.swift */,
+			);
+			path = ExamplesTableView;
+			sourceTree = "<group>";
+		};
+		A4C7F28B29B8289C00C97C84 /* ExampleUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				A4C7F28C29B828AE00C97C84 /* Onboarding */,
+			);
+			path = ExampleUIElements;
+			sourceTree = "<group>";
+		};
+		A4C7F28C29B828AE00C97C84 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A4C7F28F29B82AA200C97C84 /* OnboardingViewController.swift */,
+				A4C7F29129B8337400C97C84 /* OnboardingSlide.swift */,
+				A4C7F29329B88C8D00C97C84 /* OnboardingCollectionViewCell.swift */,
+				A4C7F29729B9B32F00C97C84 /* OnboardingStoryBoard.storyboard */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		A4CB60AF29B18BD300AD3FD9 = {
 			isa = PBXGroup;
 			children = (
@@ -150,8 +188,9 @@
 				A4CB60D329B1AC7800AD3FD9 /* AboutViewController.swift */,
 				A4CB60D729B1AF8F00AD3FD9 /* ProjectsViewController.swift */,
 				A4A83E5629B5B991001A3071 /* AppViewController.swift */,
-				A4CB60D929B1AFB300AD3FD9 /* ExamplesViewController.swift */,
+				A4C7F28A29B7652600C97C84 /* ExamplesTableView */,
 				A4CB60D529B1AF6A00AD3FD9 /* ContactViewController.swift */,
+				A4C7F28B29B8289C00C97C84 /* ExampleUIElements */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -240,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4CB60C829B18BDC00AD3FD9 /* LaunchScreen.storyboard in Resources */,
+				A4C7F29829B9B32F00C97C84 /* OnboardingStoryBoard.storyboard in Resources */,
 				A4CB60C529B18BDC00AD3FD9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,7 +333,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C7F29229B8337400C97C84 /* OnboardingSlide.swift in Sources */,
 				A4A83E5729B5B991001A3071 /* AppViewController.swift in Sources */,
+				A4C7F28929B7652200C97C84 /* ExamplesTableViewCell.swift in Sources */,
 				A4C7F28729B7488E00C97C84 /* LinkSheetCell.swift in Sources */,
 				A4C7F28329B7487000C97C84 /* LinkSheetLauncher.swift in Sources */,
 				A4CB60D829B1AF8F00AD3FD9 /* ProjectsViewController.swift in Sources */,
@@ -301,6 +343,8 @@
 				A4AA710D29B2F67400499317 /* ProjectsViewModel.swift in Sources */,
 				A4AA710929B29B6F00499317 /* AboutViewModel.swift in Sources */,
 				A4CB60DA29B1AFB300AD3FD9 /* ExamplesViewController.swift in Sources */,
+				A4C7F29029B82AA200C97C84 /* OnboardingViewController.swift in Sources */,
+				A4C7F29429B88C8D00C97C84 /* OnboardingCollectionViewCell.swift in Sources */,
 				A4AA710429B1ED0F00499317 /* ScrollView.swift in Sources */,
 				A4A83E5D29B716EA001A3071 /* AppViewModel.swift in Sources */,
 				A4CB60BC29B18BD400AD3FD9 /* AppDelegate.swift in Sources */,
@@ -380,7 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -434,7 +478,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -461,7 +505,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -492,7 +536,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
