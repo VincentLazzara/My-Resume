@@ -171,7 +171,7 @@ enum projectEnumerations: Int{
     
     var buttonLink: String{
         switch self{
-        case .blackScholes: return "https://github.com/VincentLazzara/BlackScholesCalculator"
+        case .blackScholes: return "https://apps.apple.com/us/app/black-scholes-calculator/id6446098641"
         case .theSLAP: return "nil"
         case.todoie: return "https://github.com/VincentLazzara/Todoie"
         case .seeFood: return "https://github.com/VincentLazzara/SeeFood"

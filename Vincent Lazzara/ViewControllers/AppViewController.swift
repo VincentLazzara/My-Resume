@@ -55,10 +55,6 @@ class AppViewController: UIViewController{
             self.featuresText.text = app?.appFeatures
             self.imageScreenshots.setImageInputs(app!.appImages)
             self.appImage.image = app?.appIcon
-            
-            if app?.buttonLink == "nil"{
-                
-            }
         }
     }
     
@@ -124,16 +120,24 @@ class AppViewController: UIViewController{
         return label
     }()
     
-    var githubButton: UIButton {
+     var githubButton: UIButton {
         let button = UIButton(type: .system)
         button.setDimensions(width: 160, height: 30)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor.white
         button.layer.cornerRadius = 10
-        button.setTitleColor(UIColor.black, for: .normal)
         button.titleLabel?.font = UIFont(name: "CourierNewPS-BoldMT", size: 16)
-        button.setTitle("View In GitHub", for: .normal)
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        
+        if app == .blackScholes{
+            button.backgroundColor = UIColor.systemBlue
+            button.setTitleColor(UIColor.white, for: .normal)
+            button.setTitle("View In AppStore", for: .normal)
+        } else {
+           button.backgroundColor = UIColor.white
+            button.setTitle("View In GitHub", for: .normal)
+            button.setTitleColor(UIColor.black, for: .normal)
+        }
+        
         return button
     }
         
@@ -141,8 +145,7 @@ class AppViewController: UIViewController{
     //MARK: Lifecycle
         override func viewDidLoad() {
             super.viewDidLoad()
-           // view.translatesAutoresizingMaskIntoConstraints = true
-          //  view.isUserInteractionEnabled = true
+
             view.backgroundColor = .black
             navigationController?.navigationBar.barStyle = .black
             tabBarController?.tabBar.barStyle = .black
@@ -182,11 +185,14 @@ class AppViewController: UIViewController{
             
             var stack = UIStackView()
             
+
+            
             if app?.buttonLink == "nil"{
                 stack = UIStackView(arrangedSubviews: [appsLabel, appTitleText])
             } else {
                 stack = UIStackView(arrangedSubviews: [appsLabel, appTitleText, githubButton])
             }
+          
             stack.axis = .vertical
             stack.distribution = .fill
             stack.spacing = 8
@@ -222,6 +228,8 @@ class AppViewController: UIViewController{
             contentView.bottomAnchor.constraint(equalTo: featuresStack.bottomAnchor, constant: 60).isActive = true
             
         }
+    
+    
     
     @objc func dismissal(){
         self.dismiss(animated: true)
