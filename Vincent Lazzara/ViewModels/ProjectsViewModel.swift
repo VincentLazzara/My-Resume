@@ -12,7 +12,7 @@ class ProjectsViewModel{
     
     let allAppsLabel: CLTypingLabel = {
         let label = CLTypingLabel()
-        label.text = "All Apps"
+        label.text = "All Apps (scrollable)"
         label.font = UIFont(name: "CourierNewPS-BoldMT", size: 20)
         label.textAlignment = .left
         label.textColor = .cyan

@@ -125,7 +125,7 @@ class StarRatingViewController: UIViewController{
     var timer: Timer?
     
     func startTimer() {
-        var currentIndex = 0
+        var currentIndex = 1
         timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { [weak self] _ in
             guard let self = self else { return }
             

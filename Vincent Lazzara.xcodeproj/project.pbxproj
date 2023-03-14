@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A44FA29D29BEDA7E000F31A2 /* UserReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44FA29C29BEDA7D000F31A2 /* UserReviewViewController.swift */; };
+		A44FA2A029BEEFA4000F31A2 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44FA29F29BEEFA4000F31A2 /* SideMenu.swift */; };
 		A4A83E5729B5B991001A3071 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A83E5629B5B991001A3071 /* AppViewController.swift */; };
 		A4A83E5B29B6E115001A3071 /* InvertedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A83E5A29B6E115001A3071 /* InvertedHeaderView.swift */; };
 		A4A83E5D29B716EA001A3071 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A83E5C29B716E9001A3071 /* AppViewModel.swift */; };
@@ -46,6 +47,8 @@
 		A4CB60DA29B1AFB300AD3FD9 /* ExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CB60D929B1AFB300AD3FD9 /* ExamplesViewController.swift */; };
 		A4CB60DD29B1B71700AD3FD9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CB60DC29B1B71700AD3FD9 /* HeaderView.swift */; };
 		A4CB60DF29B1B90300AD3FD9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CB60DE29B1B90200AD3FD9 /* Extensions.swift */; };
+		A4FC7FE229BFF06300EE620B /* SideMenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC7FE129BFF06300EE620B /* SideMenuHeader.swift */; };
+		A4FC7FE429BFF1AC00EE620B /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC7FE329BFF1AC00EE620B /* SideMenuCell.swift */; };
 		B6B39E8D3B03FEF085089EB5 /* Pods_Vincent_Lazzara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ACFAB7CA4191F1231EDFD51 /* Pods_Vincent_Lazzara.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +56,7 @@
 		6ACFAB7CA4191F1231EDFD51 /* Pods_Vincent_Lazzara.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vincent_Lazzara.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A093F2F2ACB6C0EADF6DDA75 /* Pods-Vincent Lazzara.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vincent Lazzara.release.xcconfig"; path = "Target Support Files/Pods-Vincent Lazzara/Pods-Vincent Lazzara.release.xcconfig"; sourceTree = "<group>"; };
 		A44FA29C29BEDA7D000F31A2 /* UserReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReviewViewController.swift; sourceTree = "<group>"; };
+		A44FA29F29BEEFA4000F31A2 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		A4A83E5629B5B991001A3071 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		A4A83E5A29B6E115001A3071 /* InvertedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvertedHeaderView.swift; sourceTree = "<group>"; };
 		A4A83E5C29B716E9001A3071 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 		A4CB60D929B1AFB300AD3FD9 /* ExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesViewController.swift; sourceTree = "<group>"; };
 		A4CB60DC29B1B71700AD3FD9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		A4CB60DE29B1B90200AD3FD9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A4FC7FE129BFF06300EE620B /* SideMenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeader.swift; sourceTree = "<group>"; };
+		A4FC7FE329BFF1AC00EE620B /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		EA4F2168784972BE7BCF94DB /* Pods-Vincent Lazzara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vincent Lazzara.debug.xcconfig"; path = "Target Support Files/Pods-Vincent Lazzara/Pods-Vincent Lazzara.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +129,16 @@
 				A093F2F2ACB6C0EADF6DDA75 /* Pods-Vincent Lazzara.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A44FA29E29BEEF8E000F31A2 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A44FA29F29BEEFA4000F31A2 /* SideMenu.swift */,
+				A4FC7FE129BFF06300EE620B /* SideMenuHeader.swift */,
+				A4FC7FE329BFF1AC00EE620B /* SideMenuCell.swift */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		A4AA710729B29B5B00499317 /* ViewModels */ = {
@@ -157,6 +173,7 @@
 		A4C7F28B29B8289C00C97C84 /* ExampleUIElements */ = {
 			isa = PBXGroup;
 			children = (
+				A44FA29E29BEEF8E000F31A2 /* SideMenu */,
 				A4C7F29929B9E1D100C97C84 /* LoadingScreen */,
 				A4C7F28C29B828AE00C97C84 /* Onboarding */,
 				A4C7F2BC29BAEC6200C97C84 /* StarRating */,
@@ -403,6 +420,7 @@
 			files = (
 				A4C7F29229B8337400C97C84 /* OnboardingSlide.swift in Sources */,
 				A4C7F2BB29B9FE0A00C97C84 /* StarRatingViewController.swift in Sources */,
+				A4FC7FE429BFF1AC00EE620B /* SideMenuCell.swift in Sources */,
 				A4A83E5729B5B991001A3071 /* AppViewController.swift in Sources */,
 				A4C7F28929B7652200C97C84 /* ExamplesTableViewCell.swift in Sources */,
 				A4C7F28729B7488E00C97C84 /* LinkSheetCell.swift in Sources */,
@@ -412,6 +430,7 @@
 				A4AA710D29B2F67400499317 /* ProjectsViewModel.swift in Sources */,
 				A44FA29D29BEDA7E000F31A2 /* UserReviewViewController.swift in Sources */,
 				A4AA710929B29B6F00499317 /* AboutViewModel.swift in Sources */,
+				A44FA2A029BEEFA4000F31A2 /* SideMenu.swift in Sources */,
 				A4CB60DA29B1AFB300AD3FD9 /* ExamplesViewController.swift in Sources */,
 				A4C7F29029B82AA200C97C84 /* OnboardingViewController.swift in Sources */,
 				A4C7F29429B88C8D00C97C84 /* OnboardingCollectionViewCell.swift in Sources */,
@@ -422,6 +441,7 @@
 				A4AA710629B1F4EC00499317 /* SkillsScrollView.swift in Sources */,
 				A4C7F29B29B9E1FE00C97C84 /* LoadingScreenViewController.swift in Sources */,
 				A4CB60D229B18D4700AD3FD9 /* MainTabController.swift in Sources */,
+				A4FC7FE229BFF06300EE620B /* SideMenuHeader.swift in Sources */,
 				A4AA710B29B2D04800499317 /* AppScrollView.swift in Sources */,
 				A4C7F28529B7488100C97C84 /* LinkViewModel.swift in Sources */,
 				A4CB60D429B1AC7800AD3FD9 /* AboutViewController.swift in Sources */,

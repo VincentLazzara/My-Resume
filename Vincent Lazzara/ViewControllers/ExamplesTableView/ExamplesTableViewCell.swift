@@ -19,6 +19,7 @@ class ExampleTableViewCell: UITableViewCell{
         return label
     }()
     
+
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -28,7 +29,7 @@ class ExampleTableViewCell: UITableViewCell{
         titleLabel.centerX(inView: self)
         titleLabel.centerY(inView: self)
     
-    
+
         
     }
     
