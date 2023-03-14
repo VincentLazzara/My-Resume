@@ -28,7 +28,7 @@ class MenuViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        tableView.isScrollEnabled = false
         tableView.tableHeaderView = headerView
         headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 75)
         
@@ -36,10 +36,12 @@ class MenuViewController: UITableViewController {
         tableView.delegate = self
         tableView.register(SideMenuCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .systemBlue
+        
         tableView.separatorStyle = .singleLine
         tableView.separatorColor = .white
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = #colorLiteral(red: 0, green: 0.1333, blue: 0.6784, alpha: 1)
+        
+   
         
         tableView.clipsToBounds = true
         tableView.layer.cornerRadius = 20
@@ -60,3 +62,6 @@ class MenuViewController: UITableViewController {
         self.dismiss(animated: true)
     }
 }
+
+
+

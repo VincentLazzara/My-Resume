@@ -49,6 +49,9 @@
 		A4CB60DF29B1B90300AD3FD9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CB60DE29B1B90200AD3FD9 /* Extensions.swift */; };
 		A4FC7FE229BFF06300EE620B /* SideMenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC7FE129BFF06300EE620B /* SideMenuHeader.swift */; };
 		A4FC7FE429BFF1AC00EE620B /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC7FE329BFF1AC00EE620B /* SideMenuCell.swift */; };
+		A4FC7FE729C0093300EE620B /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC7FE629C0093300EE620B /* LogInViewController.swift */; };
+		A4FC7FE929C009AF00EE620B /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = A4FC7FE829C009AF00EE620B /* login.json */; };
+		A4FC7FEB29C01F4F00EE620B /* LoginAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC7FEA29C01F4F00EE620B /* LoginAccessoryView.swift */; };
 		B6B39E8D3B03FEF085089EB5 /* Pods_Vincent_Lazzara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ACFAB7CA4191F1231EDFD51 /* Pods_Vincent_Lazzara.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +102,9 @@
 		A4CB60DE29B1B90200AD3FD9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A4FC7FE129BFF06300EE620B /* SideMenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeader.swift; sourceTree = "<group>"; };
 		A4FC7FE329BFF1AC00EE620B /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
+		A4FC7FE629C0093300EE620B /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		A4FC7FE829C009AF00EE620B /* login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
+		A4FC7FEA29C01F4F00EE620B /* LoginAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAccessoryView.swift; sourceTree = "<group>"; };
 		EA4F2168784972BE7BCF94DB /* Pods-Vincent Lazzara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vincent Lazzara.debug.xcconfig"; path = "Target Support Files/Pods-Vincent Lazzara/Pods-Vincent Lazzara.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +179,7 @@
 		A4C7F28B29B8289C00C97C84 /* ExampleUIElements */ = {
 			isa = PBXGroup;
 			children = (
+				A4FC7FE529C0092500EE620B /* LogIn */,
 				A44FA29E29BEEF8E000F31A2 /* SideMenu */,
 				A4C7F29929B9E1D100C97C84 /* LoadingScreen */,
 				A4C7F28C29B828AE00C97C84 /* Onboarding */,
@@ -265,8 +272,8 @@
 				A4CB60D329B1AC7800AD3FD9 /* AboutViewController.swift */,
 				A4CB60D729B1AF8F00AD3FD9 /* ProjectsViewController.swift */,
 				A4A83E5629B5B991001A3071 /* AppViewController.swift */,
-				A4C7F28A29B7652600C97C84 /* ExamplesTableView */,
 				A4CB60D529B1AF6A00AD3FD9 /* ContactViewController.swift */,
+				A4C7F28A29B7652600C97C84 /* ExamplesTableView */,
 				A4C7F28B29B8289C00C97C84 /* ExampleUIElements */,
 			);
 			path = ViewControllers;
@@ -293,6 +300,16 @@
 				A4AA710A29B2D04800499317 /* AppScrollView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A4FC7FE529C0092500EE620B /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				A4FC7FEA29C01F4F00EE620B /* LoginAccessoryView.swift */,
+				A4FC7FE629C0093300EE620B /* LogInViewController.swift */,
+				A4FC7FE829C009AF00EE620B /* login.json */,
+			);
+			path = LogIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4C7F2A629B9E87A00C97C84 /* an5.json in Resources */,
+				A4FC7FE929C009AF00EE620B /* login.json in Resources */,
 				A4CB60C829B18BDC00AD3FD9 /* LaunchScreen.storyboard in Resources */,
 				A4C7F2A829B9E8A800C97C84 /* an4.json in Resources */,
 				A4C7F2A029B9E82D00C97C84 /* an2.json in Resources */,
@@ -426,10 +444,12 @@
 				A4C7F28729B7488E00C97C84 /* LinkSheetCell.swift in Sources */,
 				A4C7F28329B7487000C97C84 /* LinkSheetLauncher.swift in Sources */,
 				A4CB60D829B1AF8F00AD3FD9 /* ProjectsViewController.swift in Sources */,
+				A4FC7FEB29C01F4F00EE620B /* LoginAccessoryView.swift in Sources */,
 				A4CB60DF29B1B90300AD3FD9 /* Extensions.swift in Sources */,
 				A4AA710D29B2F67400499317 /* ProjectsViewModel.swift in Sources */,
 				A44FA29D29BEDA7E000F31A2 /* UserReviewViewController.swift in Sources */,
 				A4AA710929B29B6F00499317 /* AboutViewModel.swift in Sources */,
+				A4FC7FE729C0093300EE620B /* LogInViewController.swift in Sources */,
 				A44FA2A029BEEFA4000F31A2 /* SideMenu.swift in Sources */,
 				A4CB60DA29B1AFB300AD3FD9 /* ExamplesViewController.swift in Sources */,
 				A4C7F29029B82AA200C97C84 /* OnboardingViewController.swift in Sources */,

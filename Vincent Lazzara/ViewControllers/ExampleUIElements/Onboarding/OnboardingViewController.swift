@@ -61,6 +61,35 @@ class OnboardingViewController: UIViewController{
         pageControl.page = 0
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         currentPage = 0
+        
+        pageControl.isHidden = true
+        nextButton.isHidden = true
+        collectionView.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.transition(with: pageControl,
+                          duration: 0.75,
+                       options: .transitionCrossDissolve,
+                    animations: { [weak self] in
+            self?.pageControl.isHidden = false
+                 }, completion: nil)
+        
+        UIView.transition(with: nextButton,
+                          duration: 2.0,
+                       options: .transitionCrossDissolve,
+                    animations: { [weak self] in
+            self?.nextButton.isHidden = false
+                 }, completion: nil)
+        
+        UIView.transition(with: collectionView,
+                          duration: 0.75,
+                       options: .transitionCrossDissolve,
+                    animations: { [weak self] in
+            self?.collectionView.isHidden = false
+                 }, completion: nil)
+        
+       
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {

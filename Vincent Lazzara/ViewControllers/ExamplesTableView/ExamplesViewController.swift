@@ -18,7 +18,7 @@ class ExamplesViewController: UITableViewController{
     
     private lazy var headerView = CustomNavigationBar()
     
-    let uiTitle = ["Onboarding Screen", "Loading Animations", "Star Rating Form", "Side Menu", "User Post", "Slide Up Menu",  "Log In"]
+    let uiTitle = ["Onboarding Screen", "Loading Animations", "Star Rating Form", "Side Menu", "Slide Up Menu",  "Log In"]
     
     let viewControllers: [UIViewController] = [
         UIStoryboard(name: "OnboardingStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "onboardingStoryboard"),
@@ -29,6 +29,7 @@ class ExamplesViewController: UITableViewController{
     var sideMenuContainer: UIView!
     var sideMenuVisible = false
     
+    private var backgroundSheetLauncher: LinkSheetLauncher!
     
     //MARK: Lifecycle
     
@@ -53,6 +54,12 @@ class ExamplesViewController: UITableViewController{
         tableView.separatorStyle = .singleLine
     }
     
+    func linkPressed() {
+        self.backgroundSheetLauncher = LinkSheetLauncher()
+        self.backgroundSheetLauncher.delegate = self
+        self.backgroundSheetLauncher.show()
+    }
+    
 }
 
 //MARK: Table View Set Up
@@ -70,7 +77,7 @@ extension  ExamplesViewController{
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 80
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -82,20 +89,13 @@ extension  ExamplesViewController{
         switch indexPath.row{
         case 0...2: self.present(viewControllers[indexPath.row], animated: true, completion: nil)
         case 3: self.present(menu, animated: true)
+        case 4: linkPressed()
+        case 5: self.present(LoginViewController(), animated: true)
         default: return
         }
    
     }
-    @objc func toggleSideMenu(_ sender: Any) {
-            UIView.animate(withDuration: 0.3) {
-                if self.sideMenuVisible {
-                    self.sideMenuContainer.transform = CGAffineTransform(translationX: -self.sideMenuContainer.frame.width, y: 0)
-                } else {
-                    self.sideMenuContainer.transform = CGAffineTransform.identity
-                }
-                self.sideMenuVisible = !self.sideMenuVisible
-            }
-        }
+
     
 
 
@@ -104,4 +104,13 @@ extension  ExamplesViewController{
 
 
 
+}
+
+extension ExamplesViewController: LinkSheetLauncherDelegate{
+    func didSelect(option: LinkActionOptions) {
+        UIApplication.shared.open(option.url)
+    }
+    
+    
+    
 }
