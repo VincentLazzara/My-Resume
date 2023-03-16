@@ -52,6 +52,8 @@
 		A4FC7FE729C0093300EE620B /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC7FE629C0093300EE620B /* LogInViewController.swift */; };
 		A4FC7FE929C009AF00EE620B /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = A4FC7FE829C009AF00EE620B /* login.json */; };
 		A4FC7FEB29C01F4F00EE620B /* LoginAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC7FEA29C01F4F00EE620B /* LoginAccessoryView.swift */; };
+		A4FC7FEE29C05D6300EE620B /* EmailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FC7FED29C05D6300EE620B /* EmailService.swift */; };
+		A4FC7FF429C27ECD00EE620B /* vincent-lazzara-ios-dev-3-23.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A4FC7FF329C27ECD00EE620B /* vincent-lazzara-ios-dev-3-23.pdf */; };
 		B6B39E8D3B03FEF085089EB5 /* Pods_Vincent_Lazzara.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ACFAB7CA4191F1231EDFD51 /* Pods_Vincent_Lazzara.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +107,8 @@
 		A4FC7FE629C0093300EE620B /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		A4FC7FE829C009AF00EE620B /* login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
 		A4FC7FEA29C01F4F00EE620B /* LoginAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAccessoryView.swift; sourceTree = "<group>"; };
+		A4FC7FED29C05D6300EE620B /* EmailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailService.swift; sourceTree = "<group>"; };
+		A4FC7FF329C27ECD00EE620B /* vincent-lazzara-ios-dev-3-23.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "vincent-lazzara-ios-dev-3-23.pdf"; sourceTree = "<group>"; };
 		EA4F2168784972BE7BCF94DB /* Pods-Vincent Lazzara.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vincent Lazzara.debug.xcconfig"; path = "Target Support Files/Pods-Vincent Lazzara/Pods-Vincent Lazzara.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,6 +258,7 @@
 		A4CB60BA29B18BD400AD3FD9 /* Vincent Lazzara */ = {
 			isa = PBXGroup;
 			children = (
+				A4FC7FEC29C05D4E00EE620B /* API */,
 				A4AA710729B29B5B00499317 /* ViewModels */,
 				A4CB60DB29B1B6F500AD3FD9 /* Views */,
 				A4CB60D029B18D0C00AD3FD9 /* SupportFiles */,
@@ -282,6 +287,7 @@
 		A4CB60D029B18D0C00AD3FD9 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				A4FC7FF329C27ECD00EE620B /* vincent-lazzara-ios-dev-3-23.pdf */,
 				A4CB60C429B18BDC00AD3FD9 /* Assets.xcassets */,
 				A4CB60C629B18BDC00AD3FD9 /* LaunchScreen.storyboard */,
 				A4CB60DE29B1B90200AD3FD9 /* Extensions.swift */,
@@ -310,6 +316,14 @@
 				A4FC7FE829C009AF00EE620B /* login.json */,
 			);
 			path = LogIn;
+			sourceTree = "<group>";
+		};
+		A4FC7FEC29C05D4E00EE620B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A4FC7FED29C05D6300EE620B /* EmailService.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4FC7FF429C27ECD00EE620B /* vincent-lazzara-ios-dev-3-23.pdf in Resources */,
 				A4C7F2A629B9E87A00C97C84 /* an5.json in Resources */,
 				A4FC7FE929C009AF00EE620B /* login.json in Resources */,
 				A4CB60C829B18BDC00AD3FD9 /* LaunchScreen.storyboard in Resources */,
@@ -462,6 +477,7 @@
 				A4C7F29B29B9E1FE00C97C84 /* LoadingScreenViewController.swift in Sources */,
 				A4CB60D229B18D4700AD3FD9 /* MainTabController.swift in Sources */,
 				A4FC7FE229BFF06300EE620B /* SideMenuHeader.swift in Sources */,
+				A4FC7FEE29C05D6300EE620B /* EmailService.swift in Sources */,
 				A4AA710B29B2D04800499317 /* AppScrollView.swift in Sources */,
 				A4C7F28529B7488100C97C84 /* LinkViewModel.swift in Sources */,
 				A4CB60D429B1AC7800AD3FD9 /* AboutViewController.swift in Sources */,

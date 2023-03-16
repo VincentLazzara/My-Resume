@@ -85,7 +85,7 @@ class AboutViewModel{
         label.font = UIFont(name: "CourierNewPSMT", size: 16)
         label.textColor = .white
         label.numberOfLines = 0
-        label.text = "B.A. Business Administration - Finance Concenctration \nCalifornia State University, Fullerton \n (April 2023)"
+        label.text = "B.A. Business Administration - Finance Concenctration \nCalifornia State University, Fullerton"
         label.textAlignment = .left
         return label
     }()

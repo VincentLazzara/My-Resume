@@ -161,7 +161,7 @@ enum projectEnumerations: Int{
     
     var appFeatures: String{
         switch self{
-        case .blackScholes: return "-JSON API \n\n-Financial Formulas\n\n-Responsive UI\n\n-Cocoapods"
+        case .blackScholes: return "-JSON API \n\n-Financial Formulas\n\n-Responsive UI\n\n-Cocoapods\n\n-13 Downloads (so far)"
         case .theSLAP: return "-Firebase Auth\n\n-Firebase Data\n\n-Front-End/Back-End\n\n-User Customization"
         case .todoie: return "-Core Data \n\n-Realm\n\n-TableViews\n\n-Data Filtering"
         case .seeFood: return "-Core ML\n\n-Model Creation\n\n-CreateML"

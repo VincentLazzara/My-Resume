@@ -7,6 +7,7 @@
 
 import UIKit
 import CLTypingLabel
+import QuickLook
 
 class AboutViewController: UIViewController{
     
@@ -36,6 +37,18 @@ class AboutViewController: UIViewController{
     private lazy var aboutLabel = viewModel.aboutLabel
     private lazy var aboutMeText = viewModel.aboutMeText
     
+    private let resumeButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setDimensions(width: 200, height: 35)
+        button.layer.cornerRadius = 5
+        button.titleLabel?.font = UIFont(name: "CourierNewPS-BoldMT", size: 16)
+        button.backgroundColor = #colorLiteral(red: 0.8392, green: 0.8392, blue: 0.8392, alpha: 1)
+        button.setTitle("View Resume", for: .normal)
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.tintColor = .black
+        return button
+    }()
+    
     
     //MARK: Lifecycle
     
@@ -64,8 +77,13 @@ class AboutViewController: UIViewController{
         contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         
+        
+        contentView.addSubview(resumeButton)
+        resumeButton.centerX(inView: contentView, topAnchor: contentView.topAnchor, paddingTop: 60)
+        resumeButton.addTarget(self, action: #selector(displayPDFButtonTapped), for: .touchUpInside)
+        
         contentView.addSubview(careerObjective)
-        careerObjective.anchor(top: contentView.topAnchor, left: contentView.leftAnchor, paddingTop: 60, paddingLeft: 10)
+        careerObjective.anchor(top: resumeButton.bottomAnchor, left: contentView.leftAnchor, paddingTop: 30, paddingLeft: 10)
         
         contentView.addSubview(careerText)
         careerText.centerX(inView: contentView, topAnchor: careerObjective.bottomAnchor, paddingTop: 5)
@@ -108,9 +126,15 @@ class AboutViewController: UIViewController{
         
         
         contentView.bottomAnchor.constraint(equalTo: aboutMeText.bottomAnchor, constant: 50).isActive = true
+    }
+    
+    
+    @objc func displayPDFButtonTapped() {
+        let previewController = QLPreviewController()
+           previewController.dataSource = self
+           present(previewController, animated: true, completion: nil)
         
     }
-
     
 }
 
@@ -131,4 +155,20 @@ extension AboutViewController: LinkSheetLauncherDelegate{
     func didSelect(option: LinkActionOptions) {
         UIApplication.shared.open(option.url)
     }
+}
+
+extension AboutViewController: QLPreviewControllerDataSource {
+    
+    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+        return 1
+    }
+
+    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+        guard let pdfURL = Bundle.main.url(forResource: "vincent-lazzara-ios-dev-3-23", withExtension: "pdf") else {
+            fatalError("Error loading PDF")
+        }
+        return pdfURL as QLPreviewItem
+    }
+
+    
 }

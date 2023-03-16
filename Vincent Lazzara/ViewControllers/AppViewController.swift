@@ -168,7 +168,7 @@ class AppViewController: UIViewController{
             scrollView.addSubview(contentView)
             contentView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addConstraintsToFillView(scrollView)
-            contentView.setDimensions(width: scrollView.frame.width, height: 1200)
+            contentView.setDimensions(width: scrollView.frame.width, height: view.frame.height + 600)
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true

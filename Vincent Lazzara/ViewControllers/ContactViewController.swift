@@ -8,10 +8,19 @@
 
 import UIKit
 import Contacts
+import Combine
+import MaterialComponents
 
 class ContactViewController: UIViewController{
     
     //MARK: Properties
+    
+    private let emailService = EmailService()
+    private var cancellables = Set<AnyCancellable>()
+    
+    var accessoryView: LoginAccessoryView!
+    var nameAccessoryView: LoginAccessoryView!
+    var textAccessoryView: LoginAccessoryView!
     
     let emailLabel: UILabel = {
         let label = UILabel()
@@ -44,8 +53,6 @@ class ContactViewController: UIViewController{
         image.setDimensions(width: 16, height: 16)
         return image
      }()
-    
-    private let apiKey = "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"
 
     private let contactButton: UIButton = {
         let button = UIButton(type: .system)
@@ -54,13 +61,115 @@ class ContactViewController: UIViewController{
         button.titleLabel?.font = UIFont(name: "CourierNewPS-BoldMT", size: 16)
         button.setImage(UIImage(named: "phone-book"), for: .normal)
         button.imageEdgeInsets.left = -25
-        button.backgroundColor = .white
+        button.backgroundColor = #colorLiteral(red: 0.8392, green: 0.8392, blue: 0.8392, alpha: 1)
         button.setTitle("Save My Contact", for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
         button.tintColor = .black
         return button
     }()
     
+    
+    let emailInput: MDCOutlinedTextField = {
+        let tf = MDCOutlinedTextField()
+        tf.placeholder = "Enter Your Email"
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.label.text = "Email"
+        tf.font = UIFont(name: "CourierNewPSMT", size: 18)
+        tf.setFloatingLabelColor(.cyan, for: .editing)
+        tf.setOutlineColor(.white, for: .normal)
+        tf.setFloatingLabelColor(.white, for: .normal)
+        tf.setOutlineColor(.cyan, for: .editing)
+        tf.tintColor = .white
+        tf.setNormalLabelColor(.white, for: .normal)
+
+        tf.layer.borderColor = UIColor.white.cgColor
+        tf.setTextColor(.white, for: .normal)
+        tf.setTextColor(.white, for: .editing)
+        tf.preferredContainerHeight = 20
+        tf.verticalDensity = 1
+        
+        tf.textAlignment = .left
+        //Trying to disable predictive bar
+        tf.inputAssistantItem.leadingBarButtonGroups = []
+        tf.inputAssistantItem.trailingBarButtonGroups = []
+        tf.keyboardType = .emailAddress
+        tf.autocorrectionType = .no
+        tf.spellCheckingType = .no
+        return tf
+    }()
+    
+    let nameInput: MDCOutlinedTextField = {
+        let tf = MDCOutlinedTextField()
+        tf.placeholder = "Enter Your Name"
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.label.text = "Name"
+        tf.font = UIFont(name: "CourierNewPSMT", size: 18)
+        tf.setFloatingLabelColor(.cyan, for: .editing)
+        tf.setOutlineColor(.white, for: .normal)
+        tf.setFloatingLabelColor(.white, for: .normal)
+        tf.setOutlineColor(.cyan, for: .editing)
+        tf.tintColor = .white
+        tf.setNormalLabelColor(.white, for: .normal)
+
+        tf.layer.borderColor = UIColor.white.cgColor
+        tf.setTextColor(.white, for: .normal)
+        tf.setTextColor(.white, for: .editing)
+        tf.preferredContainerHeight = 20
+        tf.verticalDensity = 1
+        
+        tf.textAlignment = .left
+        //Trying to disable predictive bar
+        tf.inputAssistantItem.leadingBarButtonGroups = []
+        tf.inputAssistantItem.trailingBarButtonGroups = []
+        tf.keyboardType = .alphabet
+        tf.autocorrectionType = .no
+        tf.spellCheckingType = .no
+        return tf
+    }()
+    
+    
+    let messageInput: MDCOutlinedTextArea = {
+        let textArea = MDCOutlinedTextArea()
+        textArea.label.text = "Message"
+        textArea.leadingAssistiveLabel.text = "Message"
+        textArea.sizeToFit()
+        textArea.setOutlineColor(.white, for: .normal)
+        textArea.setOutlineColor(.cyan, for: .editing)
+        textArea.setFloatingLabel(.white, for: .normal)
+        textArea.setFloatingLabel(.cyan, for: .editing)
+        
+        textArea.textView.font = UIFont(name: "CourierNewPSMT", size: 18)
+        textArea.setNormalLabel(.white, for: .normal)
+
+        textArea.layer.borderColor = UIColor.white.cgColor
+        textArea.setTextColor(.white, for: .normal)
+        textArea.setTextColor(.white, for: .editing)
+        
+        //Trying to disable predictive bar
+        textArea.inputAssistantItem.leadingBarButtonGroups = []
+        textArea.inputAssistantItem.trailingBarButtonGroups = []
+        textArea.textView.keyboardType = .alphabet
+        textArea.textView.autocorrectionType = .no
+        textArea.textView.spellCheckingType = .no
+        
+        return textArea
+        
+    }()
+    
+    
+    private let sendButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setDimensions(width: 150, height: 35)
+        button.layer.cornerRadius = 5
+        button.titleLabel?.font = UIFont(name: "CourierNewPS-BoldMT", size: 18)
+        button.backgroundColor = .white
+        button.setTitle("Send", for: .normal)
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.tintColor = .black
+        return button
+    }()
+    
+
     //MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -72,7 +181,7 @@ class ContactViewController: UIViewController{
         navigationController?.navigationBar.addSubview(customNavBar)
         
         view.addSubview(contactButton)
-        contactButton.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor, paddingTop: 65)
+        contactButton.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor, paddingTop: 70)
         
         contactButton.addTarget(self, action: #selector(checkIfContactSaved), for: .touchUpInside)
         
@@ -84,21 +193,151 @@ class ContactViewController: UIViewController{
         let phoneStack = UIStackView(arrangedSubviews: [phoneIcon, phoneLabel])
         phoneStack.alignment = .center
         phoneStack.axis = .horizontal
-        phoneStack.spacing = 10
+        phoneStack.spacing = 2
         
         let vStack = UIStackView(arrangedSubviews: [emailStack, phoneStack])
         vStack.axis = .vertical
-        vStack.alignment = .center
+        vStack.alignment = .leading
         vStack.spacing = 10
         
         view.addSubview(vStack)
-        vStack.centerX(inView: view, topAnchor: contactButton.bottomAnchor, paddingTop: 20)
+        vStack.anchor(top: contactButton.bottomAnchor, left: view.leftAnchor, paddingTop: 30, paddingLeft: 15)
+        
+        let divider = UIView()
+        divider.setDimensions(width: view.frame.width, height: 2)
+        divider.backgroundColor = .lightGray
+        
+        view.addSubview(divider)
+        divider.centerX(inView: view, topAnchor: vStack.bottomAnchor, paddingTop: 35)
+        
+        
+        view.addSubview(emailInput)
+        emailInput.centerX(inView: view, topAnchor: divider.bottomAnchor, paddingTop: 30)
+        emailInput.setDimensions(width: view.frame.width - 35, height: 20)
+        emailInput.delegate = self
+        
+     /*   accessoryView = LoginAccessoryView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 45))
+        accessoryView.changeFont(labelFont: UIFont(name: "CourierNewPS-BoldMT", size: 16)!, textFont: UIFont(name: "CourierNewPSMT", size: 16)!)
+        accessoryView.textLabel.text = "Enter your email"
+        emailInput.inputAccessoryView = accessoryView */
+        
+        
+        view.addSubview(nameInput)
+        nameInput.setDimensions(width: view.frame.width - 35, height: 20)
+        nameInput.centerX(inView: view, topAnchor: emailInput.bottomAnchor, paddingTop: 35)
+        nameInput.delegate = self
+        
+     /*   nameAccessoryView = LoginAccessoryView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 45))
+        nameAccessoryView.changeFont(labelFont: UIFont(name: "CourierNewPS-BoldMT", size: 16)!, textFont: UIFont(name: "CourierNewPSMT", size: 16)!)
+        nameAccessoryView.textLabel.text = "Enter your name"
+        nameAccessoryView.emailLabel.text = "Name:"
+        nameInput.inputAccessoryView = nameAccessoryView */
+        
+        
+   /*     textAccessoryView = LoginAccessoryView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 45))
+        textAccessoryView.changeFont(labelFont: UIFont(name: "CourierNewPS-BoldMT", size: 16)!, textFont: UIFont(name: "CourierNewPSMT", size: 16)!)
+        textAccessoryView.textLabel.text = "Enter Your Message"
+        textAccessoryView.emailLabel.text = "Message:"
+        textAccessoryView.textLabel.clipsToBounds = true */
+        view.addSubview(messageInput)
+        messageInput.setDimensions(width: view.frame.width - 35, height: 40)
+        messageInput.centerX(inView: view, topAnchor: nameInput.bottomAnchor, paddingTop: 35)
+      //  messageInput.textView.inputAccessoryView = textAccessoryView
+        messageInput.textView.delegate = self
+        
+        
+        view.addSubview(sendButton)
+        sendButton.centerX(inView: view, topAnchor: messageInput.bottomAnchor, paddingTop: 60)
+        sendButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         
         
     }
     
+    
+    func sendEmail(message: String){
+        emailService.send(message: message)
+            .receive(on: DispatchQueue.main)
+            
+            .sink { [weak self] completion in
+            if case .failure(let error) = completion{
+                print(error)
+            }
+        } receiveValue: { [weak self] isSuccessful in
+            print(isSuccessful ? "Sent successfully" : "Did not send")
+        }.store(in: &cancellables)
+
+        
+    }
+    
+    @objc func sendMessage(){
+        var name = ""
+        var email = ""
+        var message = ""
+        
+        if let text = emailInput.text, !text.isEmpty { email = text} else { sendTextAlert(title: "Error", field: "email.") ; return}
+        if let text = nameInput.text, !text.isEmpty { name = text} else { sendTextAlert(title: "Error", field: "name.") ; return}
+        if let text = messageInput.textView.text, !text.isEmpty { message = text} else { sendTextAlert(title: "Error", field: "message.") ; return}
+        
+        sendEmail(message: "\(name) : \(email) \n \(message)")
+        
+        nameInput.text = nil
+        emailInput.text = nil
+        messageInput.textView.text = nil
+        
+        let alert = UIAlertController(title: "Success", message: "Your message was sent. I'll be in touch soon!", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func sendTextAlert(title: String, field: String){
+        let alert = UIAlertController(title: title, message: "You need to input a \(field)", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
 }
 
+//MARK: Text Field Delegate
+
+extension ContactViewController: UITextFieldDelegate, UITextViewDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailInput {
+            // If the user pressed return while editing the first text field, move focus to the second text field
+            nameInput.becomeFirstResponder()
+        } else if textField == nameInput{
+            messageInput.textView.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
+    
+
+
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+                  textView.resignFirstResponder()
+                  return false
+              }
+        return true
+    }
+    
+}
+
+
+
+//MARK: Contact Configuration
 
 extension ContactViewController{
     

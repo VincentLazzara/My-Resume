@@ -36,7 +36,7 @@ class CustomNavigationBar: UIView {
     
     private let profileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "myPhoto.png")
+        imageView.image = UIImage(named: "profilePhoto2.jpg")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 25
