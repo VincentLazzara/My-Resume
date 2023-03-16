@@ -5,4 +5,4 @@ You can also find all my relevant links, projects, and even some example UI elem
 It also includes a form for you to contact me as well as a way to save my contact to your phone.
 
 
-![Alt Text](https://imgur.com/ycqCrEt.gif)
+![Alt Text](https://imgur.com/aVeCdkg.gif)
