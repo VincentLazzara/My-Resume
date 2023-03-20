@@ -1,6 +1,8 @@
 # My-Resume
 PDFs are boring. Take a look at my resume through this app.
 
+Link on AppStore: https://bit.ly/v-lazzara
+
 You can also find all my relevant links, projects, and even some example UI elements. 
 It also includes a form for you to contact me as well as a way to save my contact to your phone.
 
